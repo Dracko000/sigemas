@@ -1,0 +1,48 @@
+{
+  "name": "SiGEMAS — Sistem Gramatur, Edukasi & Manajemen Aktif SIBI",
+  "short_name": "SiGEMAS",
+  "description": "Platform belajar terintegrasi buku SIBI dengan kelas live, kuis, nilai, presensi, dan pendampingan orang tua.",
+  "lang": "id",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#F5F7FA",
+  "theme_color": "#0D47A1",
+  "categories": ["education", "productivity"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Katalog SIBI",
+      "short_name": "Katalog",
+      "url": "/katalog",
+      "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+    },
+    {
+      "name": "Kelas Live",
+      "short_name": "Live",
+      "url": "/live",
+      "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+    },
+    {
+      "name": "Dasbor",
+      "short_name": "Dasbor",
+      "url": "/dashboard",
+      "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+    }
+  ]
+}

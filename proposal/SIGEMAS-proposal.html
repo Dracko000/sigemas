@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SiGEMAS — Proposal Kemitraan & Pilot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --blue-950: #071a33;
+    --blue-900: #0d47a1;
+    --blue-700: #1565c0;
+    --blue-600: #1e88e5;
+    --blue-100: #e3f2fd;
+    --blue-50: #f4f9ff;
+    --orange-600: #ef6c00;
+    --orange-500: #ff9800;
+    --orange-100: #fff3e0;
+    --ink: #132238;
+    --muted: #5b6b7f;
+    --line: #dbe4ee;
+    --paper: #ffffff;
+    --wash: #f6f9fc;
+    --green: #16835b;
+    --red: #b42318;
+    --shadow: 0 18px 48px rgba(13, 71, 161, 0.12);
+    --sans: "Plus Jakarta Sans", "Segoe UI", Arial, sans-serif;
+    --serif: "Source Serif 4", Georgia, serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: #eaf0f6;
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 10.5pt;
+    line-height: 1.65;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  a { color: var(--blue-700); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .sheet {
+    width: 210mm;
+    margin: 24px auto;
+    background: var(--paper);
+    box-shadow: var(--shadow);
+  }
+
+  .cover {
+    position: relative;
+    min-height: 297mm;
+    padding: 26mm 20mm 20mm;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 88% 10%, rgba(255, 152, 0, 0.22), transparent 28%),
+      radial-gradient(circle at 12% 76%, rgba(30, 136, 229, 0.28), transparent 34%),
+      linear-gradient(145deg, #06172c 0%, #0a2a52 52%, #0d47a1 100%);
+    color: #fff;
+  }
+
+  .cover::before {
+    content: "";
+    position: absolute;
+    inset: 16mm;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    pointer-events: none;
+  }
+
+  .cover::after {
+    content: "";
+    position: absolute;
+    right: -24mm;
+    bottom: -20mm;
+    width: 118mm;
+    height: 118mm;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    box-shadow: 0 0 0 18mm rgba(255, 255, 255, 0.035), 0 0 0 36mm rgba(255, 255, 255, 0.02);
+  }
+
+  .brand-row {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 34mm;
+  }
+
+  .brand-mark {
+    width: 44px;
+    height: 44px;
+    border-radius: 13px;
+    background: linear-gradient(145deg, var(--orange-500), var(--orange-600));
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-weight: 800;
+    font-size: 17px;
+    letter-spacing: -0.04em;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
+  }
+
+  .brand-name {
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+  }
+
+  .brand-sub {
+    font-size: 9pt;
+    color: rgba(255, 255, 255, 0.64);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .cover-kicker {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    margin-bottom: 10mm;
+    padding: 7px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.07);
+    font-size: 8.5pt;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: #ffd08a;
+  }
+
+  .cover-kicker span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--orange-500);
+    box-shadow: 0 0 0 4px rgba(255, 152, 0, 0.16);
+  }
+
+  .cover h1 {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    max-width: 152mm;
+    font-family: var(--serif);
+    font-size: 43pt;
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+    font-weight: 700;
+  }
+
+  .cover h1 em {
+    color: #ffc46b;
+    font-style: normal;
+  }
+
+  .cover-lede {
+    position: relative;
+    z-index: 1;
+    max-width: 128mm;
+    margin: 9mm 0 0;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 12pt;
+    line-height: 1.65;
+  }
+
+  .cover-meta {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    margin-top: auto;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.16);
+  }
+
+  .cover-meta div {
+    padding: 11px 13px;
+    background: rgba(5, 22, 43, 0.72);
+  }
+
+  .cover-meta dt {
+    margin: 0 0 2px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 7.5pt;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .cover-meta dd {
+    margin: 0;
+    color: #fff;
+    font-size: 9.5pt;
+    font-weight: 600;
+  }
+
+  .cover-foot {
+    position: relative;
+    z-index: 1;
+    margin-top: 10mm;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.44);
+    font-size: 8pt;
+    letter-spacing: 0.04em;
+  }
+
+  main {
+    padding: 16mm 20mm 20mm;
+  }
+
+  .toc-page { break-after: page; }
+
+  .eyebrow {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 5px;
+    color: var(--orange-600);
+    font-size: 8pt;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 18px;
+    height: 2px;
+    background: var(--orange-500);
+  }
+
+  h2 {
+    margin: 0 0 5mm;
+    font-family: var(--serif);
+    font-size: 23pt;
+    line-height: 1.14;
+    letter-spacing: -0.02em;
+    color: var(--blue-950);
+  }
+
+  h3 {
+    margin: 7mm 0 2mm;
+    font-size: 12.5pt;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: var(--blue-900);
+  }
+
+  h4 {
+    margin: 5mm 0 1.5mm;
+    font-size: 10.5pt;
+    line-height: 1.35;
+    color: var(--ink);
+  }
+
+  p { margin: 0 0 3mm; }
+  ul, ol { margin: 0 0 4mm; padding-left: 5mm; }
+  li { margin-bottom: 1.2mm; }
+  strong { color: var(--blue-950); }
+
+  .section { margin-top: 10mm; }
+  .section:first-child { margin-top: 0; }
+  #tujuan ol { break-inside: avoid; }
+
+  .lede {
+    color: var(--muted);
+    font-size: 11.5pt;
+    line-height: 1.7;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 12mm;
+    margin-top: 7mm;
+  }
+
+  .toc-item {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 2.8mm 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink);
+    font-size: 9.5pt;
+  }
+
+  .toc-item b {
+    min-width: 18px;
+    color: var(--orange-600);
+    font-size: 8pt;
+    letter-spacing: 0.06em;
+  }
+
+  .toc-item span { flex: 1; }
+
+  .callout {
+    position: relative;
+    margin: 6mm 0;
+    padding: 6mm 7mm 5mm;
+    border: 1px solid #cfe3fb;
+    border-left: 4px solid var(--blue-600);
+    border-radius: 0 12px 12px 0;
+    background: linear-gradient(135deg, var(--blue-50), #fff);
+  }
+
+  .callout.warm {
+    border-color: #ffe0b2;
+    border-left-color: var(--orange-500);
+    background: linear-gradient(135deg, #fffaf2, #fff);
+  }
+
+  .callout h4 {
+    margin: 0 0 2mm;
+    color: var(--blue-900);
+    font-size: 11pt;
+  }
+
+  .callout p:last-child { margin-bottom: 0; }
+
+  .lead-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 8mm;
+    align-items: start;
+  }
+
+  .quote {
+    margin: 0;
+    padding: 6mm;
+    border-radius: 12px;
+    background: var(--blue-950);
+    color: #fff;
+    font-family: var(--serif);
+    font-size: 13.5pt;
+    line-height: 1.45;
+  }
+
+  .quote footer {
+    margin-top: 4mm;
+    color: rgba(255, 255, 255, 0.56);
+    font-family: var(--sans);
+    font-size: 8pt;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  table {
+    width: 100%;
+    margin: 4mm 0 5mm;
+    border-collapse: collapse;
+    font-size: 8.8pt;
+    line-height: 1.5;
+  }
+
+  th {
+    padding: 2.8mm 3mm;
+    background: var(--blue-950);
+    color: #fff;
+    text-align: left;
+    font-size: 7.8pt;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    vertical-align: bottom;
+  }
+
+  td {
+    padding: 2.7mm 3mm;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+
+  tbody tr:nth-child(even) td { background: var(--wash); }
+  tbody tr:last-child td { border-bottom: none; }
+
+  .num { text-align: right; white-space: nowrap; }
+
+  .pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 7.4pt;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .pill.ok { background: #e7f6ef; color: var(--green); }
+  .pill.next { background: var(--orange-100); color: var(--orange-600); }
+  .pill.no { background: #fdecea; color: var(--red); }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2.5mm;
+    margin: 5mm 0 6mm;
+  }
+
+  .step {
+    padding: 4mm 3.5mm;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #fff;
+  }
+
+  .step b {
+    display: block;
+    margin-bottom: 1mm;
+    color: var(--orange-600);
+    font-size: 17pt;
+    line-height: 1;
+    font-family: var(--serif);
+  }
+
+  .step strong { display: block; margin-bottom: 1mm; font-size: 9.5pt; }
+  .step span { display: block; color: var(--muted); font-size: 8pt; line-height: 1.45; }
+
+  .cards-2, .cards-3, .cards-4 {
+    display: grid;
+    gap: 4mm;
+    margin: 4mm 0 5mm;
+  }
+
+  .cards-2 { grid-template-columns: 1fr 1fr; }
+  .cards-3 { grid-template-columns: repeat(3, 1fr); }
+  .cards-4 { grid-template-columns: repeat(2, 1fr); }
+
+  .card {
+    padding: 5mm;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #fff;
+  }
+
+  .card h4 { margin: 0 0 1.5mm; color: var(--blue-900); }
+  .card p { margin: 0; color: var(--muted); font-size: 9pt; }
+  .card ul { margin: 0; color: var(--muted); font-size: 9pt; }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin: 5mm 0 6mm;
+    border: 1px solid var(--line);
+    background: var(--line);
+  }
+
+  .stat {
+    padding: 4.5mm 4mm;
+    background: #fff;
+  }
+
+  .stat b {
+    display: block;
+    color: var(--blue-900);
+    font-family: var(--serif);
+    font-size: 22pt;
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  .stat span {
+    display: block;
+    margin-top: 1.5mm;
+    color: var(--muted);
+    font-size: 8pt;
+    line-height: 1.4;
+  }
+
+  .flow {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    margin: 5mm 0 6mm;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .flow div {
+    position: relative;
+    padding: 4mm 3mm;
+    border-right: 1px solid var(--line);
+    background: #fff;
+    text-align: center;
+  }
+
+  .flow div:last-child { border-right: none; }
+  .flow b { display: block; color: var(--blue-900); font-size: 9.5pt; }
+  .flow span { display: block; margin-top: 1mm; color: var(--muted); font-size: 7.8pt; line-height: 1.4; }
+
+  .arch {
+    display: grid;
+    gap: 3mm;
+    margin: 5mm 0 6mm;
+    padding: 5mm;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--wash);
+  }
+
+  .arch-row {
+    display: grid;
+    grid-template-columns: 1fr 26mm 1fr;
+    align-items: center;
+    gap: 3mm;
+  }
+
+  .arch-box {
+    padding: 4mm;
+    border: 1px solid #cfe3fb;
+    border-radius: 9px;
+    background: #fff;
+    text-align: center;
+  }
+
+  .arch-box strong { display: block; color: var(--blue-900); font-size: 9pt; }
+  .arch-box span { display: block; margin-top: 1mm; color: var(--muted); font-size: 7.8pt; }
+
+  .arch-link {
+    color: var(--blue-600);
+    text-align: center;
+    font-size: 7.5pt;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .arch-link::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin-bottom: 2mm;
+    background: var(--blue-600);
+  }
+
+  .arch-row.triple { grid-template-columns: repeat(3, 1fr); }
+
+  .timeline {
+    margin: 5mm 0 6mm;
+    border-left: 2px solid #cfe3fb;
+    padding-left: 6mm;
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-bottom: 4mm;
+  }
+
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -7.6mm;
+    top: 1.5mm;
+    width: 9px;
+    height: 9px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: var(--orange-500);
+    box-shadow: 0 0 0 1px var(--orange-500);
+  }
+
+  .timeline-item b { display: block; color: var(--blue-900); font-size: 10pt; }
+  .timeline-item span { display: block; color: var(--muted); font-size: 8.8pt; }
+
+  .kpi-note, .note {
+    padding: 3.5mm 4mm;
+    border-radius: 8px;
+    background: var(--blue-50);
+    color: var(--muted);
+    font-size: 8.5pt;
+    line-height: 1.55;
+  }
+
+  .note.warm { background: #fffaf2; }
+
+  .closing {
+    margin-top: 8mm;
+    padding: 8mm;
+    border-radius: 14px;
+    background:
+      radial-gradient(circle at 90% 10%, rgba(255, 152, 0, 0.2), transparent 26%),
+      linear-gradient(145deg, var(--blue-950), var(--blue-900));
+    color: #fff;
+  }
+
+  .closing h2 { color: #fff; margin-bottom: 3mm; }
+  .closing p { color: rgba(255, 255, 255, 0.74); }
+  .closing strong { color: #ffc46b; }
+
+  .signature {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10mm;
+    margin-top: 10mm;
+  }
+
+  .signature div {
+    padding-top: 3mm;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 8.5pt;
+  }
+
+  .signature b { display: block; margin-bottom: 1mm; color: var(--ink); }
+
+  footer.doc-foot {
+    margin-top: 10mm;
+    padding-top: 4mm;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 7.6pt;
+    display: flex;
+    justify-content: space-between;
+    gap: 8mm;
+  }
+
+  .page-break { break-before: page; }
+
+  @media screen and (max-width: 820px) {
+    body { background: #fff; }
+    .sheet { width: 100%; margin: 0; box-shadow: none; }
+    .cover { min-height: 100vh; padding: 20mm 8vw; }
+    main { padding: 12mm 8vw 18mm; }
+    .toc-grid, .lead-grid, .cards-2, .cards-3, .cards-4 { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .stat-row { grid-template-columns: 1fr 1fr; }
+    .flow { grid-template-columns: 1fr; }
+    .flow div { border-right: none; border-bottom: 1px solid var(--line); }
+    .flow div:last-child { border-bottom: none; }
+    .arch-row, .arch-row.triple { grid-template-columns: 1fr; }
+    .arch-link::before { width: 1px; height: 12px; margin: 0 auto 1mm; }
+    .cover h1 { font-size: 32pt; }
+    table { font-size: 8pt; }
+  }
+
+  @media print {
+    @page { size: A4; margin: 14mm 16mm 16mm; }
+    body { background: #fff; font-size: 9.6pt; }
+    .sheet { width: auto; margin: 0; box-shadow: none; }
+    .cover {
+      min-height: 265mm;
+      margin: -14mm -16mm 0;
+      padding: 24mm 20mm 18mm;
+      break-after: page;
+    }
+    main { padding: 0; }
+    .toc-page { break-after: page; }
+    .page-break { break-before: page; }
+    .section { margin-top: 7mm; }
+    h2 { font-size: 20pt; }
+    h3 { font-size: 11.5pt; }
+    h2, h3, h4, .eyebrow { break-after: avoid; }
+    table { font-size: 8pt; }
+    thead { display: table-header-group; }
+    tr, .card, .step, .callout, .stat-row, .arch, .timeline-item { break-inside: avoid; }
+    a { color: var(--ink); text-decoration: none; }
+    footer.doc-foot { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <section class="cover">
+    <div class="brand-row">
+      <div class="brand-mark">SG</div>
+      <div>
+        <div class="brand-name">SiGEMAS</div>
+        <div class="brand-sub">SIBI Learning OS</div>
+      </div>
+    </div>
+
+    <div class="cover-kicker"><span></span> Proposal Kemitraan &amp; Pilot</div>
+
+    <h1>Menyatukan buku, kelas, dan <em>keluarga</em> dalam satu alur belajar.</h1>
+
+    <p class="cover-lede">
+      Platform pembelajaran terpadu untuk buku resmi SIBI, kelas live, asesmen,
+      dan keterlibatan orang tua — dimulai dari satu kelas, diukur bersama,
+      lalu diperluas dengan bukti.
+    </p>
+
+    <dl class="cover-meta">
+      <div><dt>Versi</dt><dd>1.0 — November 2026</dd></div>
+      <div><dt>Status</dt><dd>Prototipe fungsional</dd></div>
+      <div><dt>Fokus</dt><dd>Pilot 1 semester</dd></div>
+      <div><dt>Sasaran</dt><dd>3–5 sekolah mitra</dd></div>
+      <div><dt>Dokumen</dt><dd>Proposal kemitraan</dd></div>
+      <div><dt>Sifat</dt><dd>Indikatif, bukan penawaran final</dd></div>
+    </dl>
+
+    <div class="cover-foot">
+      <span>SiGEMAS — Sistem Gramatur, Edukasi &amp; Manajemen Aktif SIBI</span>
+      <span>Dokumen internal &amp; mitra</span>
+    </div>
+  </section>
+
+  <main>
+
+    <section class="toc-page">
+      <div class="eyebrow">Daftar Isi</div>
+      <h2>Isi proposal</h2>
+      <p class="lede">
+        Dokumen ini disusun untuk kepala sekolah, dinas pendidikan, mitra pembiayaan,
+        dan tim internal yang akan menjalankan pilot.
+      </p>
+
+      <div class="toc-grid">
+        <a class="toc-item" href="#ringkasan"><b>01</b><span>Ringkasan Eksekutif</span></a>
+        <a class="toc-item" href="#latar"><b>02</b><span>Latar Belakang</span></a>
+        <a class="toc-item" href="#tujuan"><b>03</b><span>Tujuan</span></a>
+        <a class="toc-item" href="#solusi"><b>04</b><span>Solusi yang Diusulkan</span></a>
+        <a class="toc-item" href="#lingkup"><b>05</b><span>Ruang Lingkup</span></a>
+        <a class="toc-item" href="#peran"><b>06</b><span>Pengguna &amp; Hak Akses</span></a>
+        <a class="toc-item" href="#arsitektur"><b>07</b><span>Arsitektur &amp; Teknologi</span></a>
+        <a class="toc-item" href="#integrasi"><b>08</b><span>Integrasi SIBI &amp; Dapodik</span></a>
+        <a class="toc-item" href="#metodologi"><b>09</b><span>Metodologi Implementasi</span></a>
+        <a class="toc-item" href="#pilot"><b>10</b><span>Rencana Pilot 1 Semester</span></a>
+        <a class="toc-item" href="#kpi"><b>11</b><span>KPI &amp; Evaluasi</span></a>
+        <a class="toc-item" href="#model"><b>12</b><span>Model Keberlanjutan</span></a>
+        <a class="toc-item" href="#biaya"><b>13</b><span>Estimasi Biaya</span></a>
+        <a class="toc-item" href="#risiko"><b>14</b><span>Risiko &amp; Mitigasi</span></a>
+        <a class="toc-item" href="#manfaat"><b>15</b><span>Manfaat</span></a>
+        <a class="toc-item" href="#status"><b>16</b><span>Status Prototipe</span></a>
+        <a class="toc-item" href="#penutup"><b>17</b><span>Penutup</span></a>
+        <a class="toc-item" href="#lampiran"><b>A</b><span>Lampiran &amp; Asumsi</span></a>
+      </div>
+
+      <div class="callout warm" style="margin-top:9mm">
+        <h4>Yang kami cari</h4>
+        <p>
+          Tiga sampai lima sekolah mitra, satu dinas pendidikan mitra, dan dukungan
+          pembiayaan untuk 12 bulan pengembangan serta pilot satu semester.
+        </p>
+      </div>
+
+      <h3 style="margin-top:8mm">Tiga keputusan yang kami minta</h3>
+      <div class="cards-3">
+        <div class="card">
+          <h4>1. Setujui pilot</h4>
+          <p>Tentukan 3–5 sekolah, teacher champion, dan periode pilot satu semester.</p>
+        </div>
+        <div class="card">
+          <h4>2. Sepakati ukuran</h4>
+          <p>Setujui baseline, KPI, instrumen evaluasi, dan batas data yang dibagikan.</p>
+        </div>
+        <div class="card">
+          <h4>3. Tunjuk penanggung jawab</h4>
+          <p>Sepakati sponsor, PIC sekolah, DPO/security, dan ritme review dua mingguan.</p>
+        </div>
+      </div>
+
+      <div class="note" style="margin-top:4mm">
+        <strong>Cara membaca:</strong> bagian 1–6 menjelaskan masalah dan solusi;
+        bagian 7–11 menjelaskan cara membangun dan mengukur pilot; bagian 12–17
+        menjelaskan keberlanjutan, biaya, risiko, dan keputusan yang diminta.
+      </div>
+    </section>
+
+    <section class="section" id="ringkasan">
+      <div class="eyebrow">01 — Ringkasan Eksekutif</div>
+      <h2>Satu alur dari buku ke kelas, dari kelas ke keluarga.</h2>
+
+      <div class="lead-grid">
+        <div>
+          <p class="lede">
+            SiGEMAS adalah <strong>learning operating system</strong> yang menyatukan
+            konten resmi SIBI dengan alur belajar harian sekolah. Buku digital, kelas
+            live, nilai, presensi, dan komunikasi orang tua tidak lagi berjalan di alat
+            yang terpisah.
+          </p>
+          <p>
+            Guru menjadi integrator manual; siswa kehilangan konteks; orang tua baru
+            melihat hasil belajar saat rapor. SiGEMAS mengubahnya menjadi alur yang
+            saling terhubung: <strong>baca, belajar, latih, nilai, laporkan.</strong>
+          </p>
+        </div>
+        <blockquote class="quote">
+          “Bukan aplikasi ke-5. Lapisan yang membuat konten resmi benar-benar dipakai
+          di kelas.”
+          <footer>Posisi produk SiGEMAS</footer>
+        </blockquote>
+      </div>
+
+      <div class="steps">
+        <div class="step"><b>1</b><strong>Baca</strong><span>Katalog SIBI dengan sampul, metadata, dan PDF resmi.</span></div>
+        <div class="step"><b>2</b><strong>Belajar</strong><span>Kelas live, video guru, papan privat, buku di samping papan.</span></div>
+        <div class="step"><b>3</b><strong>Latih</strong><span>Flashcard, mindmap, Study Quest, dan kuis per bab.</span></div>
+        <div class="step"><b>4</b><strong>Nilai</strong><span>Buku nilai editable, presensi otomatis, progres per bab.</span></div>
+        <div class="step"><b>5</b><strong>Laporkan</strong><span>Dashboard orang tua dan sekolah yang dapat ditindaklanjuti.</span></div>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat"><b>67</b><span>Judul SIBI pada katalog awal</span></div>
+        <div class="stat"><b>4</b><span>Peran: siswa, guru, orang tua, admin</span></div>
+        <div class="stat"><b>1</b><span>Alur terpadu buku → kelas → laporan</span></div>
+        <div class="stat"><b>3–5</b><span>Sekolah sasaran pilot semester</span></div>
+      </div>
+
+      <div class="callout">
+        <h4>Yang kami minta</h4>
+        <p>
+          Komitmen pilot satu semester di 3–5 sekolah, penunjukan teacher champion,
+          akses data yang aman, dan dukungan pembiayaan 12 bulan. Sebagai gantinya,
+          sekolah mendapat akses platform, pelatihan, pendampingan, dan laporan evaluasi.
+        </p>
+      </div>
+    </section>
+
+    <section class="section page-break" id="latar">
+      <div class="eyebrow">02 — Latar Belakang</div>
+      <h2>Konten sudah digital. Pembelajarannya belum terpadu.</h2>
+
+      <p class="lede">
+        Kurikulum Merdeka dan Sistem Informasi Buku Indonesia (SIBI) telah menyediakan
+        buku teks resmi dalam format digital. Namun ketersediaan konten belum otomatis
+        menjadi pembelajaran yang terpadu.
+      </p>
+
+      <p>Sekolah masih harus merangkai sendiri katalog dan tautan PDF, kelas tatap muka
+        atau video call, bahan latihan, absensi, nilai, dan komunikasi dengan orang tua.
+        Akibatnya, energi guru habis untuk pekerjaan integrasi yang berulang.</p>
+
+      <h3>Masalah utama</h3>
+      <table>
+        <thead>
+          <tr><th style="width:22%">Pemangku kepentingan</th><th>Masalah</th><th style="width:32%">Dampak</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Guru</strong></td><td>Berpindah 3–4 alat per sesi; menyalin data absensi dan nilai secara manual.</td><td>Waktu mengajar dan umpan balik berkurang.</td></tr>
+          <tr><td><strong>Siswa</strong></td><td>Buku, catatan, latihan, dan progres tersebar.</td><td>Konteks belajar hilang; sulit melanjutkan materi.</td></tr>
+          <tr><td><strong>Orang tua</strong></td><td>Informasi baru muncul saat rapor.</td><td>Tidak bisa mendampingi saat anak masih bisa dibantu.</td></tr>
+          <tr><td><strong>Sekolah</strong></td><td>Data kelas, kehadiran, dan nilai tidak saling terhubung.</td><td>Keputusan berbasis data tertunda.</td></tr>
+          <tr><td><strong>Dinas</strong></td><td>Sulit melihat praktik baik dan pola antar-sekolah.</td><td>Replikasi program lambat dan tidak terukur.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Peluang</h3>
+      <p>
+        Yang dibutuhkan bukan penerbit baru atau aplikasi tambahan. Yang dibutuhkan
+        adalah <strong>lapisan integrasi</strong> yang membuat konten resmi benar-benar
+        dipakai di kelas, dengan data yang mengalir dari buku → kelas → asesmen → orang tua.
+      </p>
+    </section>
+
+    <section class="section" id="tujuan">
+      <div class="eyebrow">03 — Tujuan</div>
+      <h2>Apa yang ingin dibuktikan dalam satu semester.</h2>
+
+      <div class="cards-2">
+        <div class="card">
+          <h4>Tujuan umum</h4>
+          <p>
+            Membangun alur pembelajaran digital yang terpadu, mudah dipakai guru, dan
+            menghasilkan data yang berguna bagi siswa, orang tua, sekolah, serta dinas
+            pendidikan.
+          </p>
+        </div>
+        <div class="card">
+          <h4>Bukan tujuan pilot</h4>
+          <ul>
+            <li>Menggantikan seluruh sistem akademik dalam satu semester.</li>
+            <li>Memindahkan seluruh data historis sekolah.</li>
+            <li>Menjadi platform konten umum di luar ekosistem SIBI.</li>
+            <li>Mengklaim hasil belajar secara kausal tanpa evaluasi yang memadai.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Tujuan khusus pilot</h3>
+      <ol>
+        <li>Memvalidasi penggunaan SiGEMAS dalam pembelajaran mingguan di 3–5 sekolah.</li>
+        <li>Mengukur pengurangan waktu administratif guru.</li>
+        <li>Mengukur peningkatan kebiasaan membaca dan latihan siswa.</li>
+        <li>Mengukur keterlibatan orang tua dalam memantau progres.</li>
+        <li>Menguji stabilitas kelas live, panel PDF, dan papan tulis privat.</li>
+        <li>Menyiapkan integrasi Dapodik dan arsitektur produksi.</li>
+      </ol>
+    </section>
+
+    <section class="section" id="solusi">
+      <div class="eyebrow">04 — Solusi</div>
+      <h2>Empat lapisan, satu pengalaman.</h2>
+
+      <div class="cards-4">
+        <div class="card">
+          <h4>Content layer</h4>
+          <p>Katalog SIBI, metadata asli, sampul, PDF resmi, dan pemetaan bab. Konten resmi menjadi sumber utama, bukan pelengkap.</p>
+        </div>
+        <div class="card">
+          <h4>Classroom layer</h4>
+          <p>Kelas live, video guru, papan tulis privat, buku di samping papan, chat, polling, angkat tangan, dan presensi.</p>
+        </div>
+        <div class="card">
+          <h4>Assessment layer</h4>
+          <p>Flashcard, kuis, nilai, progres, dan Study Quest. Latihan melekat pada bab yang sedang dipelajari.</p>
+        </div>
+        <div class="card">
+          <h4>Insight layer</h4>
+          <p>Dashboard siswa, guru, orang tua, admin, dan dinas. Bukan angka semata, tetapi sinyal untuk bertindak.</p>
+        </div>
+      </div>
+
+      <h3>Prinsip desain</h3>
+      <table>
+        <thead><tr><th style="width:24%">Prinsip</th><th>Konsekuensi desain</th></tr></thead>
+        <tbody>
+          <tr><td><strong>SIBI-native</strong></td><td>Konten resmi menjadi sumber utama; metadata dan tautan PDF dipertahankan.</td></tr>
+          <tr><td><strong>Satu alur</strong></td><td>Buku, kelas, latihan, nilai, dan laporan tidak terpisah.</td></tr>
+          <tr><td><strong>Akses berlapis</strong></td><td>Panduan guru hanya untuk guru/admin; aturan dijaga di API.</td></tr>
+          <tr><td><strong>Guru tetap di depan</strong></td><td>Teknologi mengurangi beban, bukan menambah beban.</td></tr>
+          <tr><td><strong>Data yang bisa ditindaklanjuti</strong></td><td>Setiap dashboard berakhir pada keputusan atau tindakan.</td></tr>
+          <tr><td><strong>Siap integrasi</strong></td><td>Struktur rombel, wali kelas, dan peserta didik disiapkan untuk Dapodik.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section" id="lingkup">
+      <div class="eyebrow">05 — Ruang Lingkup</div>
+      <h2>Fitur inti yang diuji dalam pilot.</h2>
+
+      <h3>5.1 Katalog dan buku SIBI</h3>
+      <ul>
+        <li>Katalog awal <strong>67 judul</strong>: 61 SD/MI dan 6 SMA/MA.</li>
+        <li><strong>58 judul</strong> dapat diakses siswa; <strong>9 panduan guru</strong> hanya untuk guru/admin.</li>
+        <li>Metadata: judul, penulis, ISBN, penerbit, kurikulum, jenjang, sampul, tautan PDF resmi.</li>
+        <li>Filter jenjang, pencarian, dan klasifikasi audiens.</li>
+        <li>Panel buku lengkap di kelas live: pembaca PDF di samping papan tulis.</li>
+        <li>Guard akses buku guru pada detail, progres, dan flashcard.</li>
+      </ul>
+
+      <h3>5.2 Kelas live</h3>
+      <ul>
+        <li>Jadwal dan sesi live per kelas.</li>
+        <li>Video guru ke siswa melalui WebRTC; dukungan berbagi layar.</li>
+        <li>Papan tulis privat per siswa/sesi, tersimpan lokal.</li>
+        <li>Buku PDF di samping papan tulis.</li>
+        <li>Chat, angkat tangan, polling, dan presensi otomatis.</li>
+        <li>Kontrol guru untuk mengakhiri sesi.</li>
+      </ul>
+
+      <h3>5.3 Latihan dan asesmen</h3>
+      <ul>
+        <li>Flashcard otomatis per bab buku.</li>
+        <li>Kuis dengan skor, peringkat, dan pembahasan.</li>
+        <li>Buku nilai editable untuk guru.</li>
+        <li>Progres baca dan aktivitas belajar.</li>
+        <li>Study Quest, XP, level, dan badge sebagai penguat kebiasaan.</li>
+      </ul>
+
+      <h3>5.4 Orang tua</h3>
+      <ul>
+        <li>Ringkasan perkembangan anak.</li>
+        <li>Nilai dan presensi.</li>
+        <li>Laporan hasil belajar yang dapat dicetak.</li>
+        <li>Sinyal dini ketika aktivitas belajar menurun.</li>
+      </ul>
+
+      <h3>5.5 Administrasi sekolah</h3>
+      <ul>
+        <li>Manajemen pengguna dan peran.</li>
+        <li>Manajemen rombel/kelas.</li>
+        <li>Sinkronisasi katalog pusat.</li>
+        <li>Analitik sistem dan audit log.</li>
+        <li>Kesiapan integrasi Dapodik.</li>
+      </ul>
+    </section>
+
+    <section class="section" id="peran">
+      <div class="eyebrow">06 — Pengguna</div>
+      <h2>Empat peran, batas akses yang jelas.</h2>
+
+      <table>
+        <thead>
+          <tr><th style="width:14%">Peran</th><th style="width:18%">Fokus</th><th>Akses utama</th><th style="width:26%">Batasan</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Siswa</strong></td><td>Belajar dan berlatih</td><td>Katalog siswa, reader, flashcard, kuis, kelas live, progres.</td><td>Tidak dapat melihat panduan guru.</td></tr>
+          <tr><td><strong>Guru</strong></td><td>Mengajar dan menilai</td><td>Buku siswa + panduan guru, live class, nilai, presensi, RPP, ekstraktor.</td><td>Hanya kelas/book yang relevan.</td></tr>
+          <tr><td><strong>Orang tua</strong></td><td>Mendampingi</td><td>Progres, nilai, presensi, rapor anak.</td><td>Hanya data anak yang terhubung.</td></tr>
+          <tr><td><strong>Admin</strong></td><td>Mengelola</td><td>Pengguna, rombel, katalog, analitik, audit.</td><td>Tidak dapat mengakses data sensitif di luar kewenangan.</td></tr>
+          <tr><td><strong>Dinas</strong><br><span style="color:var(--muted);font-size:8pt">tahap berikutnya</span></td><td>Memantau wilayah</td><td>Agregasi multi-sekolah.</td><td>Data agregat, bukan data mentah siswa.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <h4>Keamanan akses bukan sekadar tampilan</h4>
+        <p>
+          Pembatasan buku panduan guru diterapkan di API, bukan hanya di antarmuka.
+          Siswa dan orang tua menerima <strong>403</strong> ketika mencoba mengakses
+          detail, progres, atau flashcard buku guru. Aturan ini juga diuji pada
+          pembuatan sesi live.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="arsitektur">
+      <div class="eyebrow">07 — Arsitektur</div>
+      <h2>Prototipe hari ini, fondasi untuk produksi.</h2>
+
+      <h3>7.1 Prototipe saat ini</h3>
+      <table>
+        <thead><tr><th style="width:24%">Lapisan</th><th>Teknologi</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Frontend</strong></td><td>React 19, Vite 8, TypeScript, Tailwind CSS v4, PWA.</td></tr>
+          <tr><td><strong>Backend</strong></td><td>Node.js, Express 5, JWT, Socket.io.</td></tr>
+          <tr><td><strong>Realtime</strong></td><td>WebRTC signaling untuk video guru; chat, polling, presensi.</td></tr>
+          <tr><td><strong>Data</strong></td><td>In-memory store berisi data contoh; rancangan PostgreSQL tersedia.</td></tr>
+          <tr><td><strong>Konten</strong></td><td>Snapshot katalog SIBI dengan metadata dan PDF resmi.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>7.2 Target produksi</h3>
+      <div class="arch">
+        <div class="arch-row">
+          <div class="arch-box"><strong>React PWA</strong><span>Web, tablet, layar sekolah</span></div>
+          <div class="arch-link">HTTPS</div>
+          <div class="arch-box"><strong>Express API / BFF</strong><span>Auth, RBAC, konten, nilai</span></div>
+        </div>
+        <div class="arch-row triple">
+          <div class="arch-box"><strong>PostgreSQL</strong><span>Data akademik &amp; audit</span></div>
+          <div class="arch-box"><strong>Object storage + CDN</strong><span>PDF, sampul, media</span></div>
+          <div class="arch-box"><strong>Socket.io + TURN</strong><span>Live class lintas NAT</span></div>
+        </div>
+      </div>
+
+      <p>Komponen produksi yang perlu ditambahkan: PostgreSQL dengan migrasi dan backup,
+        object storage/CDN untuk PDF dan media, TURN server, observability terpusat,
+        rate limiting/WAF, secrets management, serta kebijakan retensi dan penghapusan data.</p>
+    </section>
+
+    <section class="section" id="integrasi">
+      <div class="eyebrow">08 — Integrasi</div>
+      <h2>SIBI untuk konten, Dapodik untuk struktur.</h2>
+
+      <h3>8.1 SIBI</h3>
+      <ul>
+        <li>Sumber: katalog Kurikulum Merdeka Kemendikdasmen.</li>
+        <li>Data disimpan: <code>coverUrl</code>, <code>fileUrl</code>, penulis, ISBN, penerbit, kurikulum, <code>sourceId</code>, <code>slug</code>.</li>
+        <li>Sinkronisasi katalog dilakukan bertahap dengan validasi duplikasi ISBN.</li>
+        <li>Hak cipta dan ketentuan penggunaan konten mengikuti sumber resmi.</li>
+      </ul>
+
+      <h3>8.2 Dapodik</h3>
+      <p>
+        Struktur <code>ClassRoom</code> telah menggunakan <code>homeroomId</code>,
+        <code>studentIds</code>, <code>classIds</code>, dan <code>nisn</code> agar siap
+        dipetakan ke Dapodik.
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item"><b>1. Pemetaan</b><span>Sekolah, rombel, PTK, peserta didik.</span></div>
+        <div class="timeline-item"><b>2. Sinkronisasi bertahap</b><span>Read-only terlebih dahulu.</span></div>
+        <div class="timeline-item"><b>3. Validasi</b><span>Konflik data dan fallback manual.</span></div>
+        <div class="timeline-item"><b>4. Otomasi</b><span>Pembaruan rombel dan wali kelas.</span></div>
+        <div class="timeline-item"><b>5. Monitoring</b><span>Log sinkronisasi dan rekonsiliasi.</span></div>
+      </div>
+
+      <div class="note warm">
+        Integrasi Dapodik belum diimplementasikan pada prototipe. Ini merupakan bagian
+        roadmap fase produk, bukan klaim fitur yang sudah berjalan.
+      </div>
+    </section>
+
+    <section class="section" id="metodologi">
+      <div class="eyebrow">09 — Metodologi</div>
+      <h2>Mulai kecil, ukur dengan baseline, perbaiki tiap dua minggu.</h2>
+
+      <table>
+        <thead>
+          <tr><th style="width:14%">Tahap</th><th style="width:14%">Durasi</th><th>Aktivitas</th><th style="width:24%">Output</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Discover</strong></td><td>2–3 minggu</td><td>Wawancara guru, siswa, orang tua; audit alur; baseline.</td><td>Problem statement, baseline KPI.</td></tr>
+          <tr><td><strong>Configure</strong></td><td>3–4 minggu</td><td>Setup sekolah, rombel, akun, katalog, kebijakan akses.</td><td>Tenant sekolah siap.</td></tr>
+          <tr><td><strong>Onboard</strong></td><td>2 minggu</td><td>Pelatihan guru, simulasi live class, panduan.</td><td>Guru siap mengajar.</td></tr>
+          <tr><td><strong>Pilot</strong></td><td>16 minggu</td><td>Penggunaan mingguan, pendampingan, incident review.</td><td>Data penggunaan &amp; umpan balik.</td></tr>
+          <tr><td><strong>Evaluate</strong></td><td>2–3 minggu</td><td>Analisis KPI, wawancara, survei, rekomendasi.</td><td>Laporan pilot &amp; keputusan scale.</td></tr>
+          <tr><td><strong>Scale</strong><br><span style="color:var(--muted);font-size:8pt">opsional</span></td><td>3–6 bulan</td><td>Integrasi Dapodik, perluasan sekolah, hardening.</td><td>Rencana produksi.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <h4>Disiplin lingkup</h4>
+        <p>
+          Pilot tidak menambah fitur di luar lingkup tanpa bukti. Setiap perubahan
+          melewati change request, dinilai berdasarkan dampak ke KPI, dan dicatat
+          dalam log keputusan.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="pilot">
+      <div class="eyebrow">10 — Rencana Pilot</div>
+      <h2>Satu semester untuk menguji apakah ini benar-benar meringankan guru.</h2>
+
+      <div class="stat-row">
+        <div class="stat"><b>3–5</b><span>Sekolah mitra</span></div>
+        <div class="stat"><b>20+</b><span>Guru aktif</span></div>
+        <div class="stat"><b>10+</b><span>Kelas/rombel</span></div>
+        <div class="stat"><b>1</b><span>Semester penuh</span></div>
+      </div>
+
+      <h3>Peran dalam pilot</h3>
+      <table>
+        <thead><tr><th style="width:30%">Peran</th><th>Tanggung jawab</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Sponsor sekolah</strong></td><td>Menetapkan prioritas dan akses data.</td></tr>
+          <tr><td><strong>Teacher champion</strong></td><td>Menggunakan SiGEMAS tiap minggu dan memberi umpan balik.</td></tr>
+          <tr><td><strong>Product/engineering</strong></td><td>Memperbaiki bug, stabilitas, dan alur.</td></tr>
+          <tr><td><strong>Education lead</strong></td><td>Pelatihan, pendampingan, evaluasi pembelajaran.</td></tr>
+          <tr><td><strong>DPO/security</strong></td><td>Kepatuhan data dan tinjauan akses.</td></tr>
+          <tr><td><strong>Evaluator independen</strong></td><td>Baseline, survei, dan analisis dampak (disarankan).</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Timeline ringkas</h3>
+      <table>
+        <thead><tr><th style="width:16%">Bulan</th><th>Fokus</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Bulan 1</strong></td><td>Discover, baseline, setup tenant, pelatihan awal.</td></tr>
+          <tr><td><strong>Bulan 2</strong></td><td>Pilot kelas terbatas; live class dan panel PDF.</td></tr>
+          <tr><td><strong>Bulan 3</strong></td><td>Perluasan kelas; evaluasi tengah semester.</td></tr>
+          <tr><td><strong>Bulan 4</strong></td><td>Integrasi nilai/presensi; survei orang tua.</td></tr>
+          <tr><td><strong>Bulan 5</strong></td><td>Stabilisasi, wawancara, analisis KPI.</td></tr>
+          <tr><td><strong>Bulan 6</strong></td><td>Laporan akhir, rekomendasi, keputusan scale.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Deliverables pilot</h3>
+      <div class="cards-3">
+        <div class="card"><h4>Platform</h4><p>Tenant sekolah aktif, katalog, akun, dan kebijakan akses terkonfigurasi.</p></div>
+        <div class="card"><h4>Kapasitas</h4><p>20+ guru terlatih, panduan penggunaan, dan sesi simulasi live class.</p></div>
+        <div class="card"><h4>Bukti</h4><p>Laporan penggunaan, stabilitas, KPI, dan rekomendasi scale.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="kpi">
+      <div class="eyebrow">11 — KPI</div>
+      <h2>Ukur yang penting, bukan yang mudah.</h2>
+
+      <table>
+        <thead>
+          <tr><th style="width:16%">Dimensi</th><th>Indikator</th><th style="width:17%">Target pilot</th><th style="width:20%">Cara ukur</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Adopsi guru</strong></td><td>Guru aktif mingguan.</td><td>≥80% guru pilot.</td><td>Log aktivitas.</td></tr>
+          <tr><td><strong>Adopsi siswa</strong></td><td>Siswa membaca/melatih mingguan.</td><td>≥70% siswa pilot.</td><td>Log aktivitas.</td></tr>
+          <tr><td><strong>Keterlibatan orang tua</strong></td><td>Orang tua membuka laporan bulanan.</td><td>≥80% akun ortu.</td><td>Log akses.</td></tr>
+          <tr><td><strong>Efisiensi guru</strong></td><td>Penurunan waktu administrasi.</td><td>≥40%.</td><td>Time diary sebelum/sesudah.</td></tr>
+          <tr><td><strong>Presensi</strong></td><td>Kehadiran tercatat otomatis.</td><td>≥90% sesi live.</td><td>Log sesi.</td></tr>
+          <tr><td><strong>Stabilitas</strong></td><td>Sesi live tanpa insiden kritis.</td><td>≥95%.</td><td>Incident log.</td></tr>
+          <tr><td><strong>Kepuasan guru</strong></td><td>Guru merekomendasikan SiGEMAS.</td><td>≥4/5.</td><td>Survei.</td></tr>
+          <tr><td><strong>Kesiapan bayar</strong></td><td>Sekolah bersedia melanjutkan.</td><td>≥3 dari 5.</td><td>LOI/survei.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <h4>Catatan evaluasi</h4>
+        <p>
+          Seluruh target adalah <strong>target pilot</strong>, bukan hasil yang sudah
+          tercapai. Baseline diambil sebelum intervensi. Evaluasi dampak belajar siswa
+          memerlukan desain yang lebih ketat dan sebaiknya dilakukan bersama evaluator
+          independen.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="model">
+      <div class="eyebrow">12 — Keberlanjutan</div>
+      <h2>Pilot membuktikan nilai. Model komersial menjaga keberlanjutan.</h2>
+
+      <h3>Aliran pendapatan</h3>
+      <div class="cards-2">
+        <div class="card"><h4>SaaS sekolah</h4><p>Lisensi tahunan per siswa atau per rombel untuk fitur inti.</p></div>
+        <div class="card"><h4>Lisensi dinas</h4><p>Paket kabupaten/kota dengan dashboard multi-sekolah dan agregasi.</p></div>
+        <div class="card"><h4>Layanan implementasi</h4><p>Pelatihan guru, migrasi data, kustomisasi, dan pendampingan.</p></div>
+        <div class="card"><h4>Konten &amp; integrasi</h4><p>Paket konten tambahan, integrasi Dapodik, dan pengembangan khusus.</p></div>
+      </div>
+
+      <h3>Kerangka harga indikatif</h3>
+      <table>
+        <thead><tr><th style="width:16%">Paket</th><th style="width:22%">Sasaran</th><th>Dasar harga</th><th style="width:28%">Catatan</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Pilot</strong></td><td>3–5 sekolah</td><td>Gratis / biaya implementasi.</td><td>1 semester, evaluasi bersama.</td></tr>
+          <tr><td><strong>Sekolah</strong></td><td>SD/SMA, negeri &amp; swasta</td><td>Per siswa/tahun atau per rombel/tahun.</td><td>Termasuk fitur inti.</td></tr>
+          <tr><td><strong>Dinas</strong></td><td>Kabupaten/kota</td><td>Kontrak wilayah/tahun.</td><td>Agregasi, dukungan, pelatihan.</td></tr>
+          <tr><td><strong>Layanan</strong></td><td>Sekolah/dinas</td><td>Berbasis proyek.</td><td>Onboarding, migrasi, kustomisasi.</td></tr>
+        </tbody>
+      </table>
+
+      <p>
+        Harga final ditentukan setelah pilot berdasarkan biaya layanan, willingness to pay,
+        dan hasil evaluasi. Indikasi awal untuk diskusi: <strong>Rp10.000–Rp25.000 per
+        siswa per tahun</strong> untuk paket sekolah, dengan paket dinas dan layanan
+        dihitung terpisah.
+      </p>
+
+      <div class="callout warm">
+        <h4>Logika keberlanjutan</h4>
+        <p>
+          Pilot gratis menurunkan hambatan adopsi. Konversi terjadi ketika guru sudah
+          memakai SiGEMAS setiap minggu dan sekolah melihat bukti efisiensi. Fokus
+          monetisasi bukan pada jumlah fitur, tetapi pada waktu yang kembali dan data
+          yang bisa ditindaklanjuti.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="biaya">
+      <div class="eyebrow">13 — Biaya</div>
+      <h2>Estimasi indikatif 12 bulan.</h2>
+
+      <p>
+        Angka berikut adalah rentang perencanaan, bukan penawaran final. Asumsi: tim inti
+        5 orang, 5 sekolah pilot, infrastruktur cloud, dan evaluasi eksternal sederhana.
+      </p>
+
+      <table>
+        <thead><tr><th style="width:26%">Komponen</th><th>Asumsi</th><th style="width:22%" class="num">Rentang (Rp juta)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Tim inti</strong></td><td>Product/engineering, education, growth, implementasi.</td><td class="num">750–1.050</td></tr>
+          <tr><td><strong>Infrastruktur</strong></td><td>Cloud, object storage, CDN, monitoring, TURN.</td><td class="num">60–120</td></tr>
+          <tr><td><strong>Pilot &amp; pelatihan</strong></td><td>5 sekolah, workshop, perjalanan, materi.</td><td class="num">125–200</td></tr>
+          <tr><td><strong>Keamanan, legal, evaluasi</strong></td><td>Privacy review, uji keamanan, evaluator.</td><td class="num">50–90</td></tr>
+          <tr><td><strong>Kontingensi</strong></td><td>10% dari total.</td><td class="num">100–145</td></tr>
+          <tr><td><strong>Total indikatif</strong></td><td>12 bulan, termasuk pilot 1 semester.</td><td class="num"><strong>1.085–1.605</strong></td></tr>
+        </tbody>
+      </table>
+
+      <p>Komponen yang dapat disesuaikan: ukuran tim dan komposisi peran, jumlah sekolah
+        pilot, tingkat dukungan implementasi, kebutuhan integrasi Dapodik, dan penggunaan
+        evaluator independen.</p>
+    </section>
+
+    <section class="section page-break" id="risiko">
+      <div class="eyebrow">14 — Risiko</div>
+      <h2>Risiko yang kami akui, dan cara kami membatasinya.</h2>
+
+      <table>
+        <thead><tr><th style="width:26%">Risiko</th><th style="width:28%">Dampak</th><th>Mitigasi</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Adopsi guru rendah</strong></td><td>Pilot tidak menghasilkan data.</td><td>Teacher champion, onboarding 1:1, alur sesingkat mungkin.</td></tr>
+          <tr><td><strong>Konektivitas tidak merata</strong></td><td>Kelas live terganggu.</td><td>Mode rendah bandwidth, PWA, caching PDF, fallback materi.</td></tr>
+          <tr><td><strong>WebRTC gagal di NAT ketat</strong></td><td>Video tidak tersambung.</td><td>TURN server, health check, fallback audio/chat.</td></tr>
+          <tr><td><strong>PDF besar/lambat</strong></td><td>Pengalaman baca buruk.</td><td>Range request, cache, pemilih halaman, kompresi.</td></tr>
+          <tr><td><strong>Kekhawatiran privasi</strong></td><td>Penolakan sekolah/orang tua.</td><td>Kepatuhan UU PDP, consent, minimisasi data, audit akses.</td></tr>
+          <tr><td><strong>Konten/legal</strong></td><td>Risiko penggunaan materi.</td><td>Gunakan sumber resmi, atribusi, patuhi ketentuan lisensi.</td></tr>
+          <tr><td><strong>Dapodik berubah/terbatas</strong></td><td>Integrasi tertunda.</td><td>Sinkronisasi bertahap, fallback manual, kontrak data.</td></tr>
+          <tr><td><strong>Scope creep</strong></td><td>Pilot melebar.</td><td>Lingkup pilot tetap, change request terkontrol.</td></tr>
+          <tr><td><strong>Ketergantungan tim kecil</strong></td><td>Risiko eksekusi.</td><td>Dokumentasi, prioritasi, rekrutmen bertahap.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section" id="manfaat">
+      <div class="eyebrow">15 — Manfaat</div>
+      <h2>Nilai yang diharapkan untuk setiap pihak.</h2>
+
+      <div class="cards-2">
+        <div class="card">
+          <h4>Bagi guru</h4>
+          <ul>
+            <li>Mengurangi perpindahan aplikasi dan pekerjaan administratif.</li>
+            <li>Buku, kelas, nilai, dan presensi dalam satu alur.</li>
+            <li>Data kelas yang lebih cepat ditindaklanjuti.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Bagi siswa</h4>
+          <ul>
+            <li>Konteks belajar yang utuh: buku, latihan, kuis, dan catatan.</li>
+            <li>Papan tulis privat untuk merefleksikan materi.</li>
+            <li>Umpan balik yang lebih cepat.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Bagi orang tua</h4>
+          <ul>
+            <li>Visibilitas sebelum rapor.</li>
+            <li>Bahasa laporan yang mudah dipahami.</li>
+            <li>Dasar percakapan dengan anak dan guru.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Bagi sekolah &amp; dinas</h4>
+          <ul>
+            <li>Data kelas yang terhubung dan dapat diaudit.</li>
+            <li>Dasar replikasi praktik baik.</li>
+            <li>Kesiapan integrasi Dapodik.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="status">
+      <div class="eyebrow">16 — Status</div>
+      <h2>Apa yang sudah berjalan, apa yang berikutnya.</h2>
+
+      <table>
+        <thead><tr><th>Area</th><th style="width:20%">Status</th></tr></thead>
+        <tbody>
+          <tr><td>Autentikasi dan 4 peran</td><td><span class="pill ok">Berjalan</span></td></tr>
+          <tr><td>Katalog 67 judul SIBI</td><td><span class="pill ok">Berjalan</span></td></tr>
+          <tr><td>Guard buku panduan guru</td><td><span class="pill ok">Berjalan di API</span></td></tr>
+          <tr><td>Kelas live + WebRTC signaling</td><td><span class="pill ok">Berjalan</span></td></tr>
+          <tr><td>Papan tulis privat</td><td><span class="pill ok">Berjalan</span></td></tr>
+          <tr><td>Panel PDF di samping papan</td><td><span class="pill ok">Berjalan</span></td></tr>
+          <tr><td>Flashcard, kuis, nilai, presensi</td><td><span class="pill ok">Berjalan</span></td></tr>
+          <tr><td>Dashboard orang tua</td><td><span class="pill ok">Berjalan</span></td></tr>
+          <tr><td>Panel admin dan audit</td><td><span class="pill ok">Berjalan</span></td></tr>
+          <tr><td>Build produksi</td><td><span class="pill ok">Lolos</span></td></tr>
+          <tr><td>PostgreSQL</td><td><span class="pill next">Direncanakan</span></td></tr>
+          <tr><td>Integrasi Dapodik</td><td><span class="pill next">Direncanakan</span></td></tr>
+          <tr><td>TURN server</td><td><span class="pill next">Direncanakan</span></td></tr>
+          <tr><td>Uji multi-sekolah</td><td><span class="pill no">Belum</span></td></tr>
+        </tbody>
+      </table>
+
+      <p class="note">
+        Status di atas menggambarkan prototipe fungsional, bukan produk produksi
+        multi-tenant. Hardening keamanan, skalabilitas, dan kepatuhan data merupakan
+        bagian dari rencana 12 bulan.
+      </p>
+    </section>
+
+    <section class="section" id="penutup">
+      <div class="eyebrow">17 — Penutup</div>
+
+      <div class="closing">
+        <h2>Mari mulai dari satu kelas.</h2>
+        <p>
+          SiGEMAS tidak mencoba menjadi aplikasi baru di tumpukan aplikasi sekolah.
+          SiGEMAS mencoba menjadi <strong>lapisan yang menyatukan</strong> konten resmi,
+          ruang kelas, asesmen, dan keluarga.
+        </p>
+        <p>
+          Kami mengundang 3–5 sekolah dan 1 dinas pendidikan untuk menguji pendekatan ini
+          selama satu semester. Ukur bersama kami: waktu guru yang kembali, kebiasaan
+          belajar siswa, keterlibatan orang tua, dan kualitas data sekolah. Jika buktinya
+          kuat, perluas bersama. Jika tidak, kita punya data untuk memperbaiki arah.
+        </p>
+      </div>
+
+      <div class="signature">
+        <div><b>Disusun oleh</b>Tim SiGEMAS<br>Product, engineering, dan education</div>
+        <div><b>Untuk didiskusikan dengan</b>Kepala sekolah, dinas pendidikan, dan mitra pembiayaan</div>
+      </div>
+    </section>
+
+    <section class="section page-break" id="lampiran">
+      <div class="eyebrow">Lampiran A</div>
+      <h2>Asumsi dan dokumen terkait.</h2>
+
+      <h3>Asumsi</h3>
+      <ol>
+        <li>Sekolah pilot memiliki koneksi internet yang memadai untuk video, atau dapat menggunakan mode rendah bandwidth.</li>
+        <li>Sekolah bersedia menunjuk teacher champion dan menyediakan waktu pelatihan.</li>
+        <li>Data awal sekolah tersedia dalam format yang dapat dipetakan ke struktur rombel.</li>
+        <li>Konten SIBI digunakan sesuai ketentuan sumber resmi.</li>
+        <li>Evaluasi dampak dilakukan dengan baseline dan instrumen yang disepakati.</li>
+        <li>Angka biaya dan harga bersifat indikatif untuk perencanaan, bukan komitmen komersial.</li>
+      </ol>
+
+      <h3>Dokumen terkait</h3>
+      <table>
+        <thead><tr><th style="width:38%">Dokumen</th><th>Isi</th></tr></thead>
+        <tbody>
+          <tr><td><code>README.md</code></td><td>Gambaran produk, fitur, akun demo, dan roadmap Dapodik.</td></tr>
+          <tr><td><code>docs/API.md</code></td><td>Daftar endpoint, aturan akses, dan event realtime.</td></tr>
+          <tr><td><code>docs/ERD.md</code></td><td>Rancangan entitas dan relasi data.</td></tr>
+          <tr><td><code>pitch/SIGEMAS-pitch-deck.html</code></td><td>Deck presentasi 16:9 untuk demo dan diskusi mitra.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+</div>
+</body>
+</html>
